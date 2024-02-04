@@ -3,6 +3,7 @@ import tailwindcss from "tailwindcss"
 import autoprefixer from "autoprefixer"
 import react from "@vitejs/plugin-react"
 import pluginRewriteAll from "vite-plugin-rewrite-all"
+// import visualizer from "rollup-plugin-visualizer"
 import path from "node:path"
 
 function _resolve(dir: string) {

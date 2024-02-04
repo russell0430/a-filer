@@ -1,4 +1,4 @@
-import { PrismaMediaType, PrismaClientType, Role } from "../../types/Media"
+import { PrismaMediaType, PrismaClientType } from "../../types/Media"
 
 export type CreateInput<T extends PrismaMediaType> = Parameters<
   PrismaClientType[T]["create"]
@@ -22,7 +22,7 @@ export interface UploadFolderOption {
   ignore?: string
   permissionUtil?: (
     pathname: string
-  ) => { private: boolean; authorizedRoles: Role[] } | null
+  ) => { private: boolean; authorizedRoles: string[] } | null
 }
 
 // type RRR =
