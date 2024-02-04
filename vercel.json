@@ -5,7 +5,7 @@
       "destination": "./apps/dist/index.html"
     },
     {
-      "source": "/api",
+      "source": "/api/:path*",
       "destination": "./apps/api/src/main.ts"
     }
   ]
