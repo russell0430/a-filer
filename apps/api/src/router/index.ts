@@ -7,4 +7,7 @@ const router = Router()
 router.use("/api", mediaRouter)
 router.use("/api", apiRouter)
 router.use("/api", folderRouter)
+router.get("/api/index", (req, res) => {
+  res.send("hello world").end()
+})
 export default router
