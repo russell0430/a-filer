@@ -1,7 +1,7 @@
 import qs from "qs"
 import { getTokenFromLocalStorage } from "../utils"
 
-const BACKEND_URL = "http://localhost:3000"
+const BACKEND_URL = ""
 type GetOptions = RequestInit & {
   params?: Record<string, unknown>
 }
