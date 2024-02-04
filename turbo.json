@@ -5,7 +5,7 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "web#build": { "dependsOn": ["api#build"] },
+    "web#build": { "dependsOn": ["^build", "^api#build"] },
     "test": {
       "dependsOn": ["build"],
       "outputs": [],
