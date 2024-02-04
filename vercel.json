@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "./apps/dist/index.html"
+    },
+    {
+      "source": "/api",
+      "destination": "./apps/api/src/main.ts"
+    }
+  ]
+}
