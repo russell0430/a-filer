@@ -1,11 +1,6 @@
 {
-    "ignore": [
-      ".git",
-      "node_modules",
-      "node_modules/**/node_modules"
-    ],
-    "watch": ["src/**/*.ts","../shared/**/*.ts"],
-    "ext": "ts,js,json",
-    "exec": "ts-node -r tsconfig-paths/register --files ./src/main.ts"
-  }
-  
+  "ignore": [".git", "node_modules", "node_modules/**/node_modules"],
+  "watch": ["src/**/*.ts"],
+  "ext": "ts,js,json",
+  "exec": "ts-node -r tsconfig-paths/register --files ./src/main.ts"
+}
