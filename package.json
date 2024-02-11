@@ -5,6 +5,7 @@
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter web",
     "dev:api": "turbo dev --filter api",
+    "serve": "turbo serve --filter api",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
