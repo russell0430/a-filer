@@ -14,27 +14,27 @@ const resolvedPath = path.resolve(
 
 const PUB_KEY = fs.readFileSync(resolvedPath, "utf-8")
 const app = express()
-app.use(cors({ cors: "*" }))
-app.use(express.json())
-//   passport.use()
-app.use(passport.initialize())
-passport.use(
-  constructStrategy({
-    strategy: "JWT",
-    strategyOptions: {
-      secretOrKey: PUB_KEY,
-      algorithms: ["RS256"],
-      jwtFromRequest: ExtractJwt.fromHeader("authorization"),
-    },
-  })
-)
-passport.use(
-  constructStrategy({
-    strategy: "LOCAL",
-  })
-)
-app.use(router)
-app.get("/index", (req, res) => {
+// app.use(cors({ cors: "*" }))
+// app.use(express.json())
+// //   passport.use()
+// app.use(passport.initialize())
+// passport.use(
+//   constructStrategy({
+//     strategy: "JWT",
+//     strategyOptions: {
+//       secretOrKey: PUB_KEY,
+//       algorithms: ["RS256"],
+//       jwtFromRequest: ExtractJwt.fromHeader("authorization"),
+//     },
+//   })
+// )
+// passport.use(
+//   constructStrategy({
+//     strategy: "LOCAL",
+//   })
+// )
+// app.use(router)
+app.get("/", (req, res) => {
   res.send("hello world")
 })
 
