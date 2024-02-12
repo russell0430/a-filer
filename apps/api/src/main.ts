@@ -38,6 +38,7 @@ app.get("/index", (req, res) => {
   res.send("hello world")
 })
 
+
 // static files
 // app.use(express.static(path.resolve(__dirname, "../../resources")))
 app.listen(8080, () => {
