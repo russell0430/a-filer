@@ -2,13 +2,13 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "exports": "./index.ts",
+  "main": "types.js",
+  "exports": "./types.ts",
   "scripts": {
     "init": "npx prisma init",
     "dev": "npx nodemon",
     "generate": "npx prisma generate",
-    "serve": "npx ts-node -r tsconfig-paths/register --files ./src/main.ts",
+    "serve": "npx ts-node -r tsconfig-paths/register --files ./index.ts",
     "upload": "npx ts-node -r tsconfig-paths/register --files  ./src/prisma/uploadStat/index.ts"
   },
   "keywords": [],
