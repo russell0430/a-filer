@@ -37,6 +37,9 @@ app.use(router)
 app.get("/api/index", (req, res) => {
   res.send("this is /api/index")
 })
+app.get("/ai/index", (req, res) => {
+  res.send("this is /api/index")
+})
 app.get("/", (req, res) => {
   res.send("hello world")
 })
