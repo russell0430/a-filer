@@ -1,16 +1,15 @@
 {
-  "version": 2,
-  "buildCommand":"pnpm run generate & pnpm run serve",
+  "buildCommand": "pnpm run generate & pnpm run serve",
   "builds": [
     {
       "src": "./index.ts",
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "./index.ts"
+      "source": "/(.*)",
+      "destination": "./index.ts"
     }
   ]
 }

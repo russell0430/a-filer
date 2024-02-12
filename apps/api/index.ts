@@ -37,7 +37,12 @@ app.use(router)
 app.get("/", (req, res) => {
   res.send("hello world")
 })
-
+app.get("/api/index", (req, res) => {
+  res.send("this is /api/index")
+})
+app.get("/ai/index", (req, res) => {
+  res.send("this is /api/index")
+})
 // static files
 // app.use(express.static(path.resolve(__dirname, "../../resources")))
 
