@@ -41,8 +41,5 @@ app.get("/index", (req, res) => {
 
 // static files
 // app.use(express.static(path.resolve(__dirname, "../../resources")))
-app.listen(8080, () => {
-  console.log("listening on port 8080")
-})
 
 export default app
