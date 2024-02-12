@@ -7,7 +7,7 @@
   "scripts": {
     "init": "npx prisma init",
     "dev": "npx nodemon",
-    "build": "npx ts-node ./src/main.ts",
+    "serve": "npx ts-node ./src/main.ts",
     "upload": "npx ts-node -r tsconfig-paths/register --files  ./src/prisma/uploadStat/index.ts"
   },
   "keywords": [],
