@@ -1,3 +1,4 @@
+// <reference path="../../types/express/index.d.ts" />
 import { RequestHandler } from "express"
 import prisma from "../libs/prisma"
 import { PickOptional } from "shared-types"
