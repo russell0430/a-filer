@@ -7,6 +7,7 @@
   "scripts": {
     "init": "npx prisma init",
     "dev": "npx nodemon",
+    "generate": "npx prisma generate",
     "serve": "npx ts-node -r tsconfig-paths/register --files ./src/main.ts",
     "upload": "npx ts-node -r tsconfig-paths/register --files  ./src/prisma/uploadStat/index.ts"
   },
