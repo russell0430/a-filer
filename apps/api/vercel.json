@@ -9,7 +9,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "./index.ts"
+      "destination": "/"
     }
   ]
 }
