@@ -11,7 +11,7 @@ const fetchMarkdownRequest: FetchMarkdownRequest = async ({
 }) => {
   console.log(fileId)
   const response = await get(`/api/markdown/${fileId}`)
-  const data = await response.json()
+  const data = await response.data
   return { status: response.status, data: { ...data, data: data.data[0] } }
 }
 
