@@ -15,7 +15,7 @@ export const login: LoginRequest = async ({ username, password, email }) => {
   const response = await post(`/api/login`, {
     body: JSON.stringify({ username: email, password }),
   })
-  const data = await response.json()
+  const data = response.data
   return { status: response.status, data }
 }
 
@@ -27,14 +27,14 @@ export const register: RegisterRequest = async ({
   const response = await post(`/api/register`, {
     body: JSON.stringify({ username, password, email }),
   })
-  const data = await response.json()
+  const data = await response.data
   return { status: response.status, data }
 }
 
 export const fetchMe: FetchMeRequest = async () => {
   //
   const response = await get(`/api/me`)
-  const data = await response.json()
+  const data = await response.data
   return { status: response.status, data }
 }
 
@@ -50,7 +50,8 @@ export const fetchContentByPathname: FetchContentRequest = async ({
   const response = await get(
     `/api/folder/${encodeForwardslashes(folderPathname)}`
   )
-  const data = await response.json()
+  const data = await response.data
+  console.log(data)
   return { status: response.status, data }
 }
 
@@ -69,7 +70,7 @@ export const fetchMarkdownUrl: FetchMdUrl = async (url: string) => {
 export const fetchPermission: FetchPermissionRequest = async (params) => {
   const response = await get(`/api/permission`, { params })
   console.log("fetch permission")
-  const data = await response.json()
+  const data = await response.data
   console.log(data)
   return { status: response.status, data }
 }

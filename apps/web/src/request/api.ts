@@ -8,6 +8,7 @@ type GetOptions = RequestInit & {
   params?: Record<string, unknown>
 }
 
+
 const getHeaders = (): HeadersInit => {
   const token = getTokenFromLocalStorage()
   return token
@@ -17,23 +18,20 @@ const getHeaders = (): HeadersInit => {
     : {}
 }
 export const requests = {
-  get: (url: string, options: GetOptions = {}): Promise<Response> => {
+  get: async (url: string, options: GetOptions = {}) => {
     let query = ""
     if (options.params) {
       query = qs.stringify(options.params, { addQueryPrefix: true })
     }
     console.log(`${BACKEND_URL}${url}${query}`)
     const headers = options && options.headers ? { ...options.headers } : {}
-    return axios.get(url, {
+    return await axios.get(url, {
       // credentials: "include",
       params: options.params,
     })
   },
 
-  post: (
-    url: string,
-    options: RequestInit = { headers: {} }
-  ): Promise<Response> => {
+  post: async (url: string, options: RequestInit = { headers: {} }) => {
     const headers = options && options.headers ? { ...options.headers } : {}
 
     const formattedOptions: RequestInit = {
@@ -48,6 +46,6 @@ export const requests = {
     }
 
     console.log(formattedOptions)
-    return axios.post(url, formattedOptions)
+    return await axios.post(url, formattedOptions)
   },
 }
