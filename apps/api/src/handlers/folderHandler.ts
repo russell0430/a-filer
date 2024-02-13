@@ -25,8 +25,7 @@ const folderHandler: RequestHandler<{ folderPathname: string }> = async (
   if (!result.success) {
     return res.status(200).json(result).end()
   }
-  return res.json({ success: true })
-  // return res.redirect(`/api/folderContent/${result.data.folderId}`)
+  return res.redirect(`/api/folderContent/${result.data.folderId}`)
 }
 
 const folderContentHandler: RequestHandler<{

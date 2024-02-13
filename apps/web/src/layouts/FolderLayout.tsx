@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { requests } from "@/request/api"
+import axios from "axios"
 interface FolderLayoutProps {
   header: React.ReactNode
   main: React.ReactNode
@@ -12,7 +13,7 @@ const FolderLayout: React.FC<FolderLayoutProps> = ({
 }) => {
   useEffect(() => {
     const f = async () => {
-      const res = await fetch(
+      const res = await axios.get(
         "https://a-filer-backend.vercel.app/api/folder/%2f"
       )
       console.log(res)

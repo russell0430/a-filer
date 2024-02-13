@@ -1,7 +1,9 @@
 import qs from "qs"
 import { getTokenFromLocalStorage } from "../utils"
-
+import axios from "axios"
+axios.defaults.baseURL
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || ""
+axios.defaults.baseURL = BACKEND_URL
 type GetOptions = RequestInit & {
   params?: Record<string, unknown>
 }
@@ -22,14 +24,9 @@ export const requests = {
     }
     console.log(`${BACKEND_URL}${url}${query}`)
     const headers = options && options.headers ? { ...options.headers } : {}
-    return fetch(`${BACKEND_URL}${url}${query}`, {
+    return axios.get(url, {
       // credentials: "include",
-      method: "get",
-      headers: {
-        ...headers,
-        ...getHeaders(),
-      },
-      ...options,
+      params: options.params,
     })
   },
 
@@ -51,6 +48,6 @@ export const requests = {
     }
 
     console.log(formattedOptions)
-    return fetch(`${BACKEND_URL}${url}`, formattedOptions)
+    return axios.post(url, formattedOptions)
   },
 }
