@@ -8,6 +8,7 @@ export default (config: { cors?: string[] | "*" }): RequestHandler =>
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept, Authorization, Content-Encoding"
       )
+      console.log("write wild card")
       res.header("Content-Type", "application/json")
       if (config.cors === "*") {
         res.setHeader("Access-Control-Allow-Origin", "*")
