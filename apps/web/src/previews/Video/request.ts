@@ -8,7 +8,7 @@ type FetchVideoRequest = RequestFunction<Video[]>
 const fetchVideoRequest: FetchVideoRequest = async ({ folderId }) => {
   console.log(folderId)
   const response = await get(`/api/video/folder/${folderId}`)
-  const data = await response.json()
+  const data = await response.data
   console.log(data)
   return { status: response.status, data }
 }

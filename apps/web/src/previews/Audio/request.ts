@@ -7,7 +7,7 @@ type FetchAudioRequest = RequestFunction<Audio[]>
 
 const fetchAudioRequest: FetchAudioRequest = async ({ folderId }) => {
   const response = await get(`/api/audio/folder/${folderId}`)
-  const data = await response.json()
+  const data = await response.data
   return { status: response.status, data }
 }
 

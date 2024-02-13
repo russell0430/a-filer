@@ -8,7 +8,7 @@ export type FetchImageRequest = RequestFunction<Image[]>
 
 const fetchImageRequest: FetchImageRequest = async ({ folderId, pathname }) => {
   const response = await get(`/api/image/folder/${folderId}`)
-  const data = await response.json()
+  const data = await response.data
   console.log(data)
   return { status: response.status, data }
 }
