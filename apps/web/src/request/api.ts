@@ -1,7 +1,7 @@
 import qs from "qs"
 import { getTokenFromLocalStorage } from "../utils"
 
-const BACKEND_URL = ""
+const BACKEND_URL = import.meta.env.BACKEND_URL || ""
 type GetOptions = RequestInit & {
   params?: Record<string, unknown>
 }
