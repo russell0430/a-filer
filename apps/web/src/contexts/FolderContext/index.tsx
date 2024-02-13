@@ -67,10 +67,12 @@ export const FolderContextProvider: React.FC<{
     console.log("fetch", type, folder)
     const getFolderContent = async () => {
       setIsLoading(true)
+      console.log("getFolderContent")
       try {
         const response = await fetchContentByPathname({
           folderPathname: folder,
         })
+        console.log(response)
         if (response.status === 200 && response.data.success) {
           const data = response.data.data
           console.log(data)
@@ -82,8 +84,11 @@ export const FolderContextProvider: React.FC<{
           }
         } else if (response.status === 403) {
           setIsForbidden(true)
+        } else {
+          console.log("error")
         }
       } catch (err) {
+        console.log(err)
         setFileList([])
         setSubFolderList([])
         //

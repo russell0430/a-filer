@@ -45,5 +45,7 @@ app.get("/ai/index", (req, res) => {
 })
 // static files
 // app.use(express.static(path.resolve(__dirname, "../../resources")))
-
+app.listen(3000,()=>{
+  console.log("listen on 3000")
+})
 export default app

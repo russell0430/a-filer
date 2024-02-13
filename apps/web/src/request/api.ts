@@ -1,7 +1,7 @@
 import qs from "qs"
 import { getTokenFromLocalStorage } from "../utils"
 
-const BACKEND_URL = import.meta.env.BACKEND_URL || ""
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || ""
 type GetOptions = RequestInit & {
   params?: Record<string, unknown>
 }
@@ -20,6 +20,7 @@ export const requests = {
     if (options.params) {
       query = qs.stringify(options.params, { addQueryPrefix: true })
     }
+    console.log(`${BACKEND_URL}${url}${query}`)
     const headers = options && options.headers ? { ...options.headers } : {}
     return fetch(`${BACKEND_URL}${url}${query}`, {
       // credentials: "include",

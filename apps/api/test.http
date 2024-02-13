@@ -1,1 +1,1 @@
-GET https://a-filer-backend-wezbp4vqn-russell0430.vercel.app/api/ HTTP/1.1
+GET http://localhost:3000/api/folder/%2f HTTP/1.1
